@@ -1,7 +1,7 @@
 buildAt:=$(shell date "+%Y-%m-%d/%H:%M:%S")
 commitId:=$(shell git rev-parse --short HEAD)
 branch:=$(shell git symbolic-ref --short -q HEAD)
-image := jeyrce/cms:0.1.0
+image := jeyrce/cms:latest
 
 .PHONY: all
 all: build
