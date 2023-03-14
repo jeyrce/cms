@@ -21,15 +21,13 @@ from django.contrib import \
     admin
 from django.urls import \
     path, \
-    re_path
-from django.contrib.auth import \
-    views
+    re_path, \
+    include
 from django.views.static import \
     serve
 
 from cms.settings import \
     ADMIN_SITE_URL, \
-    PASSWORD_URL, \
     MEDIA_ROOT, \
     MEDIA_URL, \
     STATIC_ROOT, \
@@ -41,12 +39,10 @@ from cms.views import \
     file
 
 urlpatterns = [
+    path(os.path.join(ADMIN_SITE_URL, "password_reset/"), AsyncPasswordResetView.as_view(), name="admin_password_reset"),
     path("", IndexView.as_view()),
-    path(ADMIN_SITE_URL, admin.site.urls, name="admin_site"),
-    path(os.path.join(PASSWORD_URL, 'admin/password_reset/'), AsyncPasswordResetView.as_view(), name='password_reset'),
-    path(os.path.join(PASSWORD_URL, 'admin/password_reset_done/'), views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    path(os.path.join(PASSWORD_URL, 'reset/<uidb64>/<token>/'), views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path(os.path.join(PASSWORD_URL, 'reset/done/'), views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path(ADMIN_SITE_URL, admin.site.urls),
+    path(ADMIN_SITE_URL, include("django.contrib.auth.urls")),
     re_path(
         r"^%s(?P<path>.*)$" % re.escape(MEDIA_URL.lstrip("/")), serve, {
             "document_root": MEDIA_ROOT}

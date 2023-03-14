@@ -218,7 +218,6 @@ SIMPLEUI_LOADING = True
 
 # 自定义配置
 ADMIN_SITE_URL = "8526c34da62c45f5820928c793b86163/"  # 采用重定向到这个地址，避免探测器很容易找到管理后台url
-PASSWORD_URL = "a56e02dc17af4435b45ec94a42a834e2/"
 
 # celery
 CELERY_BROKER_URL = os.getenv("CMS_CELERY_BROKER_URL", 'redis://:redis@redis:6379/8')
