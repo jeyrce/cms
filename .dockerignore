@@ -1,0 +1,7 @@
+*.tmp
+db.sqlite3
+.idea/
+.git/
+*.swap
+*.swp
+.DS_Store

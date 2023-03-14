@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+            *{
+                    margin: 0; padding: 0;
+            }
+            .center{
+                    clear: both;
+                    display: block;
+                    margin: auto;
+            }
+            div{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+            }
+    </style>
+</head>
+<body>
+<div class="center">{% block text %}{% endblock %}</div>
+</body>
+</html>
