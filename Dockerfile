@@ -1,4 +1,4 @@
-FROM python AS runner
+FROM python:3.11.2-slim AS runner
 
 WORKDIR "/cms/"
 
