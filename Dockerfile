@@ -30,7 +30,6 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && \
     --no-cache-dir && \
     python manage.py collectstatic
 
-VOLUME ["/cms/media/", "/cms/cms/settings.py"]
 
 # web
 CMD ["sh", "-c", "python", "manager", "runserver", "--insecure", "--no-color", "$CMS_LISTEN_ADDR"]
