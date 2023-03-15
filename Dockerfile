@@ -19,6 +19,7 @@ ENV CMS_DB_NAME="cmdb" \
 	CMS_DB_PORT="3306" \
 	CMS_CACHE_CONN="redis://:redis@redis:6379/7" \
 	CMS_CELERY_BROKER_URL="redis://:redis@redis:6379/8" \
+	C_FORCE_ROOT=1 \
 	CMS_LISTEN_ADDR="0.0.0.0:8000"
 
 COPY . .
