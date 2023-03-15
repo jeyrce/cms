@@ -32,7 +32,7 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && \
 
 
 # web
-CMD ["sh", "-c", "python", "manage.py", "runserver", "--insecure", "--no-color", "$CMS_LISTEN_ADDR"]
+CMD ["sh", "-c", "python manage.py runserver --insecure --no-color $CMS_LISTEN_ADDR"]
 
 # celery
-# CMD ["sh", "-c", "celery", "-A", "jobs", "worker", "--loglevel=info", "--concurrency=4"]
+# CMD ["sh", "-c", "celery -A jobs worker --loglevel=info --concurrency=4"]
